@@ -1,0 +1,46 @@
+% Metódy inžinierskej práce
+
+\documentclass[10pt,twoside,slovak,a4paper]{article}
+
+\usepackage[slovak]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url} % príkaz \url na formátovanie URL
+\usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
+
+\usepackage{cite}
+%\usepackage{times}
+
+\pagestyle{headings}
+
+\title{Systém odporúčania turistických destinácií založený na geotagovaných fotografiách} % meno a priezvisko vyučujúceho na cvičeniach
+
+\author{Ivan Koukal\\[2pt]
+	{\small Slovenská technická univerzita v Bratislave}\\
+	{\small Fakulta informatiky a informačných technológií}\\
+	{\small \texttt{xkoukal@stuba.sk}}
+	}
+
+\date{\small 6. október 2024}
+
+\begin{document}
+\maketitle
+
+\section{Úvod}
+
+V dnešnej dobe sa každodenne stretávame s odporúčajúcimi systémami, ako napríklad odporúčanie príspevkov na sociálnych médiách, odporúčanie hudby na hudobných platformách alebo odporúčanie filmov. Tieto systémy nám pomáhajú rýchlo sa orientovať v obrovskom množstve obsahu a nachádzať presne to, čo nás zaujíma, bez zdĺhavého hľadania, no málo kedy sa využívajú na turistické účely.
+
+
+Turisti sa často pri plánovaní svojich ciest obracajú na odporúčania od svojich známych alebo od cestovných agentúr, no tieto zdroje sú často obmedzené a môžu byť subjektívne. Na druhej strane, cestovanie organizované vlastnými silami si vyžaduje značné úsilie a čas. V snahe uľahčiť tento proces a ponúknuť efektívne a užívateľsky prívetivé riešenie sa tento článok zameriava na systém, ktorý odporúča turistické destinácie na základe vizuálnej zhody a minimálneho užívateľského vstupu.
+
+
+Základnou myšlienkou tohto systému je poskytnúť používateľom možnosť zadať buď fotografiu typu krajiny, ktorú by chceli navštíviť alebo kľúčové slovo opisujúce požadované miesto. Na základe týchto vstupov systém prehľadá databázu geotagovaných obrázkov a nájde turistické miesta, ktoré majú podobné charakteristiky. V dnešnej dobe takmer všetky fotografie spravené našimi telefónmi obsahujú informácie o lokácii. Množstvo takýchto fotografii môžeme nájsť na platformách ako Flickr alebo Google Earth,  čo znamená že jednoducho môžeme vytvoriť veľkú databázu geotagovaných obrázkov. 
+
+
+\bibliographystyle{alpha}
+\bibliography{sample}
+\nocite{5495905}
+
+\end{document}
