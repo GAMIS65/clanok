@@ -38,9 +38,48 @@ Turisti sa často pri plánovaní svojich ciest obracajú na odporúčania od sv
 
 Základnou myšlienkou tohto systému je poskytnúť používateľom možnosť zadať buď fotografiu typu krajiny, ktorú by chceli navštíviť alebo kľúčové slovo opisujúce požadované miesto. Na základe týchto vstupov systém prehľadá databázu geotagovaných obrázkov a nájde turistické miesta, ktoré majú podobné charakteristiky. V dnešnej dobe takmer všetky fotografie spravené našimi telefónmi obsahujú informácie o lokácii. Množstvo takýchto fotografii môžeme nájsť na platformách ako Flickr alebo Google Earth,  čo znamená že jednoducho môžeme vytvoriť veľkú databázu geotagovaných obrázkov. 
 
+\newpage
+
+\section{Architektúra}
+
+Architektúra systému je rozdelená na dve samostatné fázy. Offline spracovanie a online dopytovanie. Toto rozdelenie zabezpečuje výkonnosť systému aj rýchlu odozvu pre používateľov.
+
+\subsection{Fáza offline spracovania}
+Systém začína organizovaním a spracovaním masívnej databázy fotografií s geotagmi. Počas tejto fázy prebiehajú dve kľúčové operácie:
+\begin{itemize}
+    \item Geografické zoskupovani - Systém inteligentne rozdeľuje mapu sveta do regiónov na základe geografických súradníc a hustoty distribúcie fotografií. Toto zoskupovanie zabezpečuje, že obľúbené turistické destinácie sú správne zastúpené, pričom sa zároveň predchádza prehnanému zameraniu na oblasti s riedkym pokrytím fotografií.
+    \item Výber reprezentantov - Pre každý identifikovaný klaster systém určí reprezentatívne obrázky (R-obrázky), ktoré najlepšie vystihujú vizuálnu atraktivitu a jedinečné črty jednotlivých lokalít a reprezentatívne tagy (R-tagy). Tagy sú kľúčové slová a popisy, ktoré presne vystihujú charakteristiky destinácie.
+\end{itemize}
+
+
+\subsection{Fáza online dopytovania}
+Keď používatelia interagujú so systémom, môžu:
+\begin{itemize}
+\item Nahrať fotografiu, ktorá zobrazuje ich preferovaný typ destinácie
+\item Zadať kľúčové slová opisujúce charakteristiky preferovaného miesta
+\item Okamžite dostať odporúčania založené na vizuálnom alebo textovom zhodovaní s vopred spracovanými reprezentatívnymi vzorkami
+\item Systém funguje na princípe „ak sa vám páčilo toto miesto, možno sa vám budú páčiť aj tieto miesta,“ pričom ponúka odporúčania, ktoré zachovávajú vizuálnu alebo tematickú konzistenciu s preferenciami používateľa a súčasne ich oboznamujú s potenciálne neznámymi destináciami.
+\end{itemize}
+
+Táto dvojfázová architektúra poskytuje niekoľko kľúčových výhod:
+\begin{itemize}
+\item Skrátený čas odozvy vďaka predspracovaným dátam
+\item Škálovateľný výkon s rastúcou databázou fotografií
+\end{itemize}
+
+\section{Technická Implementácia}
+\subsection*{Zhromažďovanie a Distribúcia Dát}
+
+Základom systému je rozsiahla databáza obsahujúca 1,123,847 \cite{5495905} geoznačených obrázkov zozbieraných z platformy Flickr. Každý obrázok v databáze obsahuje:
+
+\begin{itemize}
+    \item GPS súradnice (zemepisná šírka a dĺžka)
+    \item Tagy poskytnuté používateľmi
+    \item Vizuálny obsah
+\end{itemize}
 
 \bibliographystyle{alpha}
 \bibliography{sample}
-\nocite{5495905}
+\cite{5495905}
 
 \end{document}
